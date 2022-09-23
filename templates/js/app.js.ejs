@@ -1,0 +1,54 @@
+const express = require('express')
+const path = require('path')
+const env = require('dotenv')
+
+// IMPORT DB CONNECTION
+const mongodbConnection = require('./config/db')
+
+// IMPORT ALL MIDDILEARES
+<% Object.keys(modules).sort().forEach(function (variable) { -%>
+const <%- variable %> = require('<%- modules[variable] %>');
+<% }); -%>
+
+//IMPORT ALL ROUTES
+<% Object.keys(localModules).sort().forEach(function (variable) { -%>
+const <%- variable %> = require('<%- localModules[variable] %>');
+<% }); -%>
+
+// IMPORTS ALL CUSTOM MIDDLEWARES
+const { notFound, errorHandler } = require('./middlewares/errorMiddleware.js')
+
+const app = express();
+env.config()
+
+<% if (view) { -%>
+// view engine setup
+<% if (view.render) { -%>
+app.engine('<%- view.engine %>', <%- view.render %>);
+<% } -%>
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', '<%- view.engine %>');
+<% } -%>
+
+// SETUP ALL MIDDLEWARES
+<% uses.forEach(function (use) { -%>
+app.use(<%- use %>);
+<% }); -%>
+
+// MONGO DB CONNECTION, //TODO: JUST UNCOMMENT THE NEXT LINE AFTER ADDING YOUR MONGO DB URI TO .ENV FINE
+//mongodbConnection()
+
+// DEFINE ALL ROUTES ENTRY POINTS
+<% mounts.forEach(function (mount) { -%>
+app.use(<%= mount.path %>, <%- mount.code %>);
+<% }); -%>
+
+// SETUP ALL CUSTOM MIDDLEWARES
+app.use(notFound)
+app.use(errorHandler)
+
+// Server Listen
+const PORT = process.env.PORT || 5000
+app.listen(PORT, () => {
+console.log(`Server is listening on port ${PORT}`)
+})
