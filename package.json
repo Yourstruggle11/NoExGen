@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "node-express application generator with modern folder structure",
   "main": "noexgen-cli.js",
+  "type": "module",
+  "preferGlobal": true,
+  "bin": {
+    "noexgen": "./noexgen-cli.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +16,16 @@
     "url": "git+https://github.com/Yourstruggle11/NoExGen.git"
   },
   "keywords": [
-    "express"
+    "express",
+    "framework",
+    "web",
+    "rest",
+    "restful",
+    "router",
+    "app",
+    "api",
+    "node",
+    "automation"
   ],
   "author": "Souvik Sen",
   "license": "MIT",
