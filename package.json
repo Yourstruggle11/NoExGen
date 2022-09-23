@@ -1,0 +1,22 @@
+{
+  "name": "noexgen",
+  "version": "1.0.0",
+  "description": "node-express application generator with modern folder structure",
+  "main": "noexgen-cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yourstruggle11/NoExGen.git"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "Souvik Sen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yourstruggle11/NoExGen/issues"
+  },
+  "homepage": "https://github.com/Yourstruggle11/NoExGen#readme"
+}
