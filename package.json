@@ -1,6 +1,6 @@
 {
   "name": "noexgen",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "node-express application generator with modern folder structure",
   "main": "noexgen-cli.js",
   "type": "module",
