@@ -32,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/Yourstruggle11/NoExGen/issues"
   },
-  "homepage": "https://github.com/Yourstruggle11/NoExGen#readme"
+  "homepage": "https://github.com/Yourstruggle11/NoExGen#readme",
+  "dependencies": {
+    "minimist": "^1.2.6"
+  }
 }
