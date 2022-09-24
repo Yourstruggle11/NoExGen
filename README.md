@@ -93,6 +93,11 @@ Options:
 
 ## 12 directories, 11 files
 
+
+# NOTE
+## This is a beta version of NoExGen, which will be more stable and include all test cases in version 1.0.0. 
+
+
 ## License
 
 [MIT](LICENSE)
