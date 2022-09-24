@@ -3,6 +3,5 @@
 //**
 
 export const isCmd = () => {
-    return process.platform === 'win32' &&
-      process.env._ === undefined
-  }
+    return process.platform === 'win32' && process.env._ === undefined
+}

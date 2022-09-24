@@ -1,4 +1,4 @@
-import fs from "fs"
+import fs from 'fs'
 //**
 //  * Check if the given directory `dir` is empty.
 //  *
@@ -6,9 +6,9 @@ import fs from "fs"
 //  * @param {Function} fn
 //**
 
- export const emptyDirectory = (dir, fn) => {
+export const emptyDirectory = (dir, fn) => {
     fs.readdir(dir, function (err, files) {
-      if (err && err.code !== 'ENOENT') throw err
-      fn(!files || !files.length)
+        if (err && err.code !== 'ENOENT') throw err
+        fn(!files || !files.length)
     })
-  }
+}
