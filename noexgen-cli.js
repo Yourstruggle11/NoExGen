@@ -15,6 +15,7 @@ import { createAppName } from './utils/createAppName.js'
 import { emptyDirectory } from './utils/emptyDirectory.js'
 import { error } from './utils/error.js'
 import { exit } from './utils/exit.js'
+import { version } from './utils/version.js'
 
 // run the main function
 main(args, exit)
@@ -50,6 +51,10 @@ function createApplication(name, dir, options, done) {
 
     // JavaScript
     var app = options.es6 ? loadTemplate('js/es6app.js') : loadTemplate('js/app.js')
+    var env = loadTemplate('js/env.js')
+
+    // ENV modules
+    env.locals.port = options.port || 5000
 
     // App modules
     app.locals.localModules = Object.create(null)
@@ -273,6 +278,7 @@ function createApplication(name, dir, options, done) {
 
     // write files
     write(path.join(dir, 'index.js'), app.render())
+    write(path.join(dir, '.env'), env.render())
     write(path.join(dir, 'package.json'), JSON.stringify(pkg, null, 2) + '\n')
 
     var prompt = isCmd() ? '>' : '$'
@@ -380,11 +386,4 @@ function main(options, done) {
             }
         })
     }
-}
-
-/**
- * Display the version.
- */
-function version() {
-    console.log('1.0.0')
 }
