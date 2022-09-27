@@ -9,7 +9,9 @@ export const args = parseArgs(process.argv.slice(2), {
         f: 'force',
         h: 'help',
         H: 'hogan',
-        v: 'view'
+        v: 'view',
+        p: 'port',
+
     },
     boolean: [
         'ejs',
@@ -24,6 +26,7 @@ export const args = parseArgs(process.argv.slice(2), {
     ],
     default: { css: true, view: true },
     string: ['css', 'view'],
+    number: ['port'],
     unknown: function (s) {
         if (s.charAt(0) === '-') {
             unknown.push(s)

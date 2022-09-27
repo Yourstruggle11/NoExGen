@@ -49,21 +49,23 @@ The following command line options can be used to further customise this generat
 
 Options:
 
-    --version            output the version number
-    -h, --help           output usage information
-    --es6                create NoEx template With modern ES6 synteax
-    --view=jade          create NoEx template With ejs engine
-    --view=pug           create NoEx template With pug engine
-    --view=hbs           create NoEx template With handlebars engine
-    --view=hjs           create NoEx template With hogan.js engine
-    -v, --view <engine>  create NoEx template with view <engine> support (dust|ejs|hbs|hjs|jade|pug|twig|vash) (defaults to jade)
-        --no-view        use static html instead of view engine
-    -c, --css <engine>   add stylesheet <engine> support (less|stylus|compass|sass) (defaults to plain css)
-        --git            add .gitignore
-    -f, --force          force on non-empty directory
+    --es6                  create NoEx template With modern ES6 synteax
+    -p,--port <port>       Start the server on the specified port
+    --view=jade            create NoEx template With ejs engine
+    --view=pug             create NoEx template With pug engine
+    --view=hbs             create NoEx template With handlebars engine
+    --view=hjs             create NoEx template With hogan.js engine
+    -v, --view <engine>    create NoEx template with view <engine> support (dust|ejs|hbs|hjs|jade|pug|twig|vash) (defaults to jade)
+        --no-view          use static html instead of view engine
+    -c, --css <engine>     add stylesheet <engine> support (less|stylus|compass|sass) (defaults to plain css)
+        --git              add .gitignore
+    -f, --force            force on non-empty directory
+    --version              output the version number
+    -h, --help             output usage information
 
 ## The produced app has the directory structure shown below.:
 
+    |   .env
     |   index.js
     |   package.json
     |
@@ -95,7 +97,7 @@ Options:
             index.ejs
             layout.ejs
 
-## 12 directories, 11 files
+## 12 directories, 12 files
 
 
 # NOTE
