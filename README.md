@@ -1,6 +1,10 @@
 ![NoExGen](https://socialify.git.ci/Yourstruggle11/NoExGen/image?description=1&descriptionEditable=NoExGen%20is%20a%20node.js%20express%20application%20generator%20with%20modern%20folder%20structure%2C%20namespace%2Fproject%20mapping%20and%20much%20more!%20It%20contains%20preconfigured%20Settings%20and%20Routing%20files%2C%20ready%20to%20be%20used%20in%20any%20project.&font=Bitter&forks=1&issues=1&language=1&name=1&owner=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Light)
 
 
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
+
+
 ## Installation
 
 ```sh
@@ -101,3 +105,8 @@ Options:
 ## License
 
 [MIT](LICENSE)
+
+[npm-image]: https://img.shields.io/npm/v/noexgen.svg
+[npm-url]: https://www.npmjs.com/package/noexgen
+[downloads-image]: https://img.shields.io/npm/dm/noexgen.svg
+[downloads-url]: https://www.npmjs.com/package/noexgen
