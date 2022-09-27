@@ -9,6 +9,7 @@
     "noexgen": "./noexgen-cli.js"
   },
   "scripts": {
+    "lint":"eslint --fix .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write ./**/*.{js,md}"
   },
@@ -45,6 +46,7 @@
     "sorted-object": "^2.0.1"
   },
   "devDependencies": {
+    "eslint": "^8.24.0",
     "prettier": "^2.7.1"
   }
 }

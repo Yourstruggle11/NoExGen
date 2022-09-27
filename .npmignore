@@ -1,0 +1,8 @@
+.gitignore
+node_modules
+npm-debug.log
+package-lock.json
+Code-Of-Conduct.md
+.prettierrc
+.eslintignore
+.eslintrc.yml

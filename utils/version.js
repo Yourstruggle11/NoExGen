@@ -2,5 +2,5 @@
 //  * Display the version.
 //**
 export const version = () => {
-    console.log('0.0.2');
+	console.log("0.0.2")
 }
