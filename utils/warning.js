@@ -5,9 +5,9 @@
 //**
 
 export const warning = (message) => {
-    console.error()
-    message.split('\n').forEach(function (line) {
-        console.error('  warning: %s', line)
-    })
-    console.error()
+	console.error()
+	message.split("\n").forEach(function (line) {
+		console.error("  warning: %s", line)
+	})
+	console.error()
 }
