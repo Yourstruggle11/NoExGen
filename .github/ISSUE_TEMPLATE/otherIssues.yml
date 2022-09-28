@@ -1,0 +1,17 @@
+name: Other Issues
+description: You can use this for any other issues. Please do NOT create blank issues
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What would you like to share?
+      description: A brief description of the question or issue, also include if you have tired anything and did not work
+    validations:
+      required: true
+  - type: textarea
+    id: extrainfo
+    attributes:
+      label: Additional information
+      description: Is there anything else I should know about this issue?
+    validations:
+      required: false
