@@ -1,0 +1,38 @@
+name: Report Bug
+description: Report a bug found in the Repository's source code
+title: "[Bug Title here] "
+labels: ["bug fix"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking your important time to fill out this bug report!
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A brief description of the question or issue, also include what you tried and what didn't work
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Please add screenshots if applicable
+    validations:
+      required: false
+  - type: textarea
+    id: extrainfo
+    attributes:
+      label: Additional information
+      description: Is there anything else we should know about this bug?
+    validations:
+      required: false
+  - type: dropdown #urgent
+    attributes:
+      label: Urgency (Optional)
+      description: How urgent do you think it is to fix this bug?
+      options:
+        - Low priority
+        - Medium priority
+        - High priority
