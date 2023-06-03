@@ -55,6 +55,7 @@ function createApplication(name, dir, options, done) {
 
 	// ENV modules
 	env.locals.port = options.port || 5000
+	env.locals.node_env = options.node_env || "development"
 
 	// App modules
 	app.locals.localModules = Object.create(null)
@@ -221,7 +222,7 @@ function createApplication(name, dir, options, done) {
 	app.locals.localModules.PublicRouter = "./routes/public/index"
 	app.locals.mounts.push({ path: "/public", code: "PublicRouter" })
 	app.locals.localModules.PrivateRouter = "./routes/private/index"
-	app.locals.mounts.push({ path: "/public", code: "PrivateRouter" })
+	app.locals.mounts.push({ path: "/private", code: "PrivateRouter" })
 
 	// Template support
 	switch (options.view) {
@@ -330,7 +331,13 @@ function main(options, done) {
 		usage()
 		error("option `-v, --view <engine>' argument missing")
 		done(1)
-	} else {
+	}
+	else if (options.node_env === "") {
+		usage()
+		error("option `-n`, --node_env <env>' argument missing")
+		done(1)
+	}
+	else {
 		// Path
 		var destinationPath = options._[0] || "."
 

@@ -11,6 +11,7 @@ export const args = parseArgs(process.argv.slice(2), {
 		H: "hogan",
 		v: "view",
 		p: "port",
+		n: "node_env",
 
 	},
 	boolean: [
@@ -22,10 +23,10 @@ export const args = parseArgs(process.argv.slice(2), {
 		"hogan",
 		"pug",
 		"version",
-		"es6"
+		"es6",
 	],
 	default: { css: true, view: true },
-	string: ["css", "view"],
+	string: ["css", "view", "node_env"],
 	number: ["port"],
 	unknown: function (s) {
 		if (s.charAt(0) === "-") {
