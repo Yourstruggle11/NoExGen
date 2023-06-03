@@ -45,7 +45,7 @@ function createApplication(name, dir, options, done) {
 		},
 		dependencies: {
 			express: "~4.18.1",
-			mongoose: "~6.6.1"
+			mongoose: "~7.2.2"
 		}
 	}
 
@@ -75,7 +75,7 @@ function createApplication(name, dir, options, done) {
 	// added security headers
 	app.locals.modules.helmet = "helmet"
 	app.locals.uses.push("helmet()")
-	pkg.dependencies["helmet"] = "~6.0.0"
+	pkg.dependencies["helmet"] = "~7.0.0"
 
 	// added mongo sanitizer
 	app.locals.modules.ExpressMongoSanitize = "express-mongo-sanitize"
@@ -89,9 +89,9 @@ function createApplication(name, dir, options, done) {
 	// Cookie parser
 	app.locals.modules.cookieParser = "cookie-parser"
 	app.locals.uses.push("cookieParser()")
-	pkg.dependencies["cookie-parser"] = "~1.4.5"
+	pkg.dependencies["cookie-parser"] = "~1.4.6"
 
-	pkg.dependencies["dotenv"] = "~16.0.2"
+	pkg.dependencies["dotenv"] = "~16.1.3"
 
 	if (dir !== ".") {
 		mkdir(dir, ".")
