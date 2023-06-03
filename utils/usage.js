@@ -16,6 +16,9 @@ export const usage = () => {
 	console.log(
 		"    -p,--port <port>       Start the server on the specified port"
 	)
+	console.log(
+		"    -n,--node_env <ENV>    Set the node environment variable to ENV"
+	)
 	console.log("    --view=jade            create NoEx template With ejs engine")
 	console.log("    --view=pug             create NoEx template With pug engine")
 	console.log(
