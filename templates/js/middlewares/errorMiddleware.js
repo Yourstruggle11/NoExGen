@@ -1,17 +1,24 @@
+const ErrorHandler = require('./ErrorClass.js');
+
 const notFound = (req, res, next) => {
-    const err = new Error(`Not Found : ${req.originalUrl}`)
-    err.status = 404
-    throw err
+    next(ErrorHandler.notFoundError(`Not found - ${req.originalUrl}`));
 }
 
 const errorHandler = (err, req, res, next) => {
-    const statusCode = err.status === 200 ? 500 : err.status
-    res.status(statusCode)
-    res.json({
-        success: false,
-        message: err.message,
-        stack: process.env.NODE_ENV === 'production' ? null : err.stack
-    })
+    if (err instanceof ErrorHandler) {
+        res.status(err.status).json({
+            success: false,
+            message: err.message,
+            status: err.status
+        });
+    } else {
+        res.status(500).json({
+            success: false,
+            message: err.message,
+            status: err.status || 500
+        });
+    }
+    console.log('error: ', err.message);
 }
 
 module.exports = {

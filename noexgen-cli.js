@@ -143,6 +143,10 @@ function createApplication(name, dir, options, done) {
 			"js/middlewares/es6errorMiddleware.js",
 			dir + "/middlewares/errorMiddleware.js"
 		)
+		copySingleTemplate(
+			"js/middlewares/es6errorClass.js",
+			dir + "/middlewares/ErrorClass.js"
+		)
 	} else {
 		copySingleTemplate("js/routes/index.js", dir + "/routes/private/index.js")
 		copySingleTemplate("js/routes/index.js", dir + "/routes/public/index.js")
@@ -151,6 +155,10 @@ function createApplication(name, dir, options, done) {
 		copySingleTemplate(
 			"js/middlewares/errorMiddleware.js",
 			dir + "/middlewares/errorMiddleware.js"
+		)
+		copySingleTemplate(
+			"js/middlewares/errorClass.js",
+			dir + "/middlewares/ErrorClass.js"
 		)
 	}
 
